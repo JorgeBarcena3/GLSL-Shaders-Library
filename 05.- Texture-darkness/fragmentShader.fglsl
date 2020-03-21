@@ -1,0 +1,29 @@
+#version 120
+
+uniform sampler2D sampler2d;
+
+// Devolvemos un determinado punto de una textura es oscuro o no
+bool checkIfDarkness(vec2 coordinate, float darkness)
+{
+    vec4 color_texture = texture2D (sampler2d, coordinate);
+
+    float colorAverage = ( color_texture.x + color_texture.y + color_texture.z ) / 3;
+
+    return colorAverage < darkness;
+}
+
+void main()
+{ 
+
+    if(checkIfDarkness(gl_TexCoord[0].st, 0.1))
+    {
+        gl_FragColor = vec4(1,1,1,1);
+
+    }
+    else
+    {
+        gl_FragColor = vec4(0,0,0,0);
+    }
+   
+
+}

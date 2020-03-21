@@ -1,0 +1,39 @@
+#version 120
+
+uniform sampler2D sampler2d;
+
+// Devolvemos si estamos un un borde o no de la textura
+bool checkIfBorder(vec2 coordinate, float width)
+{
+
+    vec2 low_corner  = vec2(0 + width);
+    vec2 high_corner = vec2(1 - width);
+
+     if (
+        coordinate.x > low_corner.x 
+     && coordinate.x < high_corner.x 
+     && coordinate.y > low_corner.y 
+     && coordinate.y < high_corner.y
+     ) 
+     {
+          return false;
+     }
+
+    return true;
+}
+
+void main()
+{ 
+
+    if(checkIfBorder(gl_TexCoord[0].st, 0.01))
+    {
+        gl_FragColor = vec4(1,1,1,1);
+
+    }
+    else
+    {
+        gl_FragColor = vec4(0,0,0,0);
+    }
+   
+
+}
