@@ -17,3 +17,12 @@ This shader transform a RGB color texture to a white and black texture.
 <p align="center">
 <img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/02.-%20Texture-white-and-black/result.png" width="300" />
 </p>
+
+
+## 02.- Texture-white-and-black
+
+This shader applies a basic Phong ilumination model over a texture.
+
+<p align="center">
+<img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/03.-%20Phong-ilumination-model/result.png" width="300" />
+</p>
