@@ -19,7 +19,7 @@ This shader transform a RGB color texture to a white and black texture.
 </p>
 
 
-## 02.- Texture-white-and-black
+## 03.- Phong-ilumination-model
 
 This shader applies a basic Phong ilumination model over a texture.
 
