@@ -1,0 +1,18 @@
+#version 120
+
+uniform sampler2D sampler2d;
+
+// Cambia un color a su escala en blanco y negro
+vec4 colorToGrayScale(vec4 A)
+{
+    float value = (A.x + A.y + A.z ) / 3;
+    return vec4(value);
+}
+
+
+void main()
+{
+    
+    gl_FragColor = colorToGrayScale( texture2D (sampler2d, gl_TexCoord[0].st) );
+
+}
