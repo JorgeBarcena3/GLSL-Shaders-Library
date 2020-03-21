@@ -1,0 +1,52 @@
+#version 120
+
+uniform float     time = 1;
+uniform sampler2D sampler2d;
+
+const int         brightness = 1;
+const vec4        neon_color = vec4(0.7, 0.0, 0.5, 1);
+const int         maxBrightness = 2;
+
+
+// Devolvemos un determinado punto de una textura es oscuro o no
+bool checkIfDarkness(vec2 coordinate, float darkness)
+{
+    vec4 color_texture = texture2D (sampler2d, coordinate);
+
+    float colorAverage = ( color_texture.x + color_texture.y + color_texture.z ) / 3;
+
+    return colorAverage < darkness;
+}
+
+//Aplicamos un efecto de neon combinando los colores de los lados
+vec4 NeonEffect(vec4 color)
+{
+
+    int i = 0;
+    int j = 0;
+    vec4 sum = vec4(0.0);
+  
+    for( i = -brightness; i < brightness; i++) {
+        for( j = -brightness; j < brightness; j++) {
+            sum += color;
+        }
+    }
+
+    return sum;
+
+}
+
+void main()
+{ 
+   if(checkIfDarkness(gl_TexCoord[0].st, 0.1))
+    {
+        vec4 sum = NeonEffect( neon_color );
+        gl_FragColor = ( sum * sum + neon_color ) * abs(sin(time * 0.9) * 0.1) * maxBrightness;
+    }
+    else
+    {
+        gl_FragColor = vec4(0,0,0,0);
+    }
+   
+
+}
