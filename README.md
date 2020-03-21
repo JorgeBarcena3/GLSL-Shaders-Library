@@ -46,3 +46,12 @@ This shader render in white color, the darkenss point of a texture
 <p align="center">
 <img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/05.-%20Texture-darkness/result.png" width="300" />
 </p>
+
+
+## 06.- [Neon-variation](https://github.com/JorgeBarcena3/GLSL-Shaders-Library/tree/master/06.-%20Neon-variation)
+
+This shader render in a neon color, the darkenss point of a texture. This color change by the elapsed time nad de sine equation. 
+
+<p align="center">
+<img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/06.-%20Neon-variation/result.gif" width="300" />
+</p>
