@@ -26,3 +26,23 @@ This shader applies a basic Phong ilumination model over a texture.
 <p align="center">
 <img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/03.-%20Phong-ilumination-model/result.png" width="300" />
 </p>
+
+
+## 04.- [Border-texture](https://github.com/JorgeBarcena3/GLSL-Shaders-Library/tree/master/04.-%20Border-texture)
+
+This shader select the border of the textures and render in white color
+
+<p align="center">
+<img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/04.-%20Border-texture/result.png" width="300" />
+</p>
+
+
+
+
+## 05.- [Texture-darkness](https://github.com/JorgeBarcena3/GLSL-Shaders-Library/tree/master/05.-%20Texture-darkness)
+
+This shader render in white color, the darkenss point of a texture
+
+<p align="center">
+<img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/05.-%20Texture-darkness/result.png" width="300" />
+</p>
