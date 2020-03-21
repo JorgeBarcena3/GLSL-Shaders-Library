@@ -1,0 +1,28 @@
+#version 120
+
+
+uniform sampler2D sampler2d;
+
+// Realiza un blend entre dos colores
+vec4 blend(vec4 A, vec4 B, float amount)
+{
+    return (1 - amount) * A + amount * B;
+}
+
+//Devuelve la distancia al centro de la textura (0.5, 0.5)
+float distanceToCenter(vec2 position)
+{
+    vec2 center = vec2(0.5, 0.5);
+    return distance(center, position);
+}
+
+void main()
+{
+    //Tengo la posicion en :  gl_TexCoord[0].st
+    vec4 blendColor = vec4(0, 0, 0, 1);
+    float blendAmount = distanceToCenter( gl_TexCoord[0].st );
+
+
+    gl_FragColor = blend(blendColor, texture2D (sampler2d, gl_TexCoord[0].st), blendAmount);
+
+}
