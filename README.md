@@ -53,7 +53,7 @@ This shader select the border of the textures and render in white color
 This shader render in a neon color, the darkenss point of a texture. This color change by the elapsed time and the sine equation. 
 
 <p align="center">
-<img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/tree/master/06.-%20Neon-variation" width="300" />
+<img src="https://github.com/JorgeBarcena3/GLSL-Shaders-Library/blob/master/06.-%20Neon-variation/result.gif" width="300" />
 </p>
 
 
