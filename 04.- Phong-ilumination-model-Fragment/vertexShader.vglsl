@@ -1,0 +1,16 @@
+#version 120
+
+varying vec3 N;
+varying vec4 P;
+
+void main()
+{    
+    // Posicion
+    P = ftransform();    
+    
+    // Normal del punto
+    N = normalize (gl_NormalMatrix * gl_Normal);
+    
+    // Calculate the clip-space position of each vertex
+    gl_Position = ftransform();
+}

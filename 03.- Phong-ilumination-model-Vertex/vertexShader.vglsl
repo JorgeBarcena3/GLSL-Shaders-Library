@@ -1,0 +1,40 @@
+#version 120
+
+uniform vec3 light_pos = vec3(-10,2,0);
+const vec3 light_color = vec3(0.75, 0.75, 0.75);
+const vec3 ambient_color = vec3(0.0);
+
+const float ka = 0.00;
+const float kd = 0.70;
+const float ks = 0.35;
+const float n  = 2;
+
+
+void main()
+{    
+    // Posicion
+    vec4 P = ftransform();
+    
+    // Normal del punto
+    vec3  N = normalize (gl_NormalMatrix * gl_Normal);
+    
+    // Luz - Posicion
+    vec3 L = normalize(light_pos - P.xyz);
+    
+    // Vista - Camara
+    vec3 V = normalize(-P.xyz);
+    
+    // Vector reflejado
+    vec3 R = reflect(-L, N);
+    
+    // Valores de ambiente, difuso y especular
+    vec3 ambient  = ka * ambient_color;
+    vec3 diffuse  = kd * light_color * max(0.0, dot(N, L));
+    vec3 specular = ks * light_color * pow(max(0.0, dot(R, V)), n);
+    
+    // Lo mandamos al fragment shader
+    gl_FrontColor = vec4((ambient.xyz + diffuse.xyz + specular.xyz), 255);
+    
+    // Calculate the clip-space position of each vertex
+    gl_Position = P;
+}
